@@ -7,6 +7,7 @@ import { useJobApplications } from '@/hooks/useJobApplications';
 import { useAuth } from '@/hooks/useAuth';
 import { useContacts } from '@/hooks/useContacts';
 import { useSkills } from '@/hooks/useSkills';
+import ChatBot from '@/components/ChatBot/ChatBot';
 
 const DashboardHome = () => {
   const navigate = useNavigate();
@@ -115,6 +116,7 @@ const DashboardHome = () => {
           </div>
         </CardContent>
       </Card>
+      <ChatBot />
     </div>
   );
 };

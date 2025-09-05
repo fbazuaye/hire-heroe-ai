@@ -4,6 +4,7 @@ import HeroSection from "@/components/Hero/HeroSection";
 import FeaturesSection from "@/components/Features/FeaturesSection";
 import DashboardPreview from "@/components/Dashboard/DashboardPreview";
 import PricingSection from "@/components/Pricing/PricingSection";
+import ChatBot from "@/components/ChatBot/ChatBot";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <PricingSection />
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 };
