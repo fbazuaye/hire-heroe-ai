@@ -5,18 +5,22 @@ import { useNavigate } from 'react-router-dom';
 import { useCoverLetters } from '@/hooks/useCoverLetters';
 import { useJobApplications } from '@/hooks/useJobApplications';
 import { useAuth } from '@/hooks/useAuth';
+import { useContacts } from '@/hooks/useContacts';
+import { useSkills } from '@/hooks/useSkills';
 
 const DashboardHome = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { coverLetters } = useCoverLetters();
   const { jobApplications } = useJobApplications();
+  const { contacts } = useContacts();
+  const { skills } = useSkills();
   
   const stats = [
     { title: 'Cover Letters', value: coverLetters?.length.toString() || '0', icon: FileText, color: 'text-blue-600' },
     { title: 'Applications', value: jobApplications?.length.toString() || '0', icon: Briefcase, color: 'text-green-600' },
-    { title: 'Contacts', value: '0', icon: Users, color: 'text-purple-600' },
-    { title: 'Skills Tracked', value: '0', icon: BookOpen, color: 'text-orange-600' },
+    { title: 'Contacts', value: contacts?.length.toString() || '0', icon: Users, color: 'text-purple-600' },
+    { title: 'Skills Tracked', value: skills?.length.toString() || '0', icon: BookOpen, color: 'text-orange-600' },
   ];
 
   const quickActions = [

@@ -172,6 +172,54 @@ export type Database = {
         }
         Relationships: []
       }
+      contacts: {
+        Row: {
+          company: string | null
+          connection_strength: string | null
+          created_at: string
+          email: string | null
+          id: string
+          last_contact_date: string | null
+          linkedin_url: string | null
+          name: string
+          notes: string | null
+          phone: string | null
+          position: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company?: string | null
+          connection_strength?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          last_contact_date?: string | null
+          linkedin_url?: string | null
+          name: string
+          notes?: string | null
+          phone?: string | null
+          position?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company?: string | null
+          connection_strength?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          last_contact_date?: string | null
+          linkedin_url?: string | null
+          name?: string
+          notes?: string | null
+          phone?: string | null
+          position?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       cover_letters: {
         Row: {
           company_name: string
@@ -812,6 +860,39 @@ export type Database = {
           created_at?: string
           id?: string
           query?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      skills: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          name: string
+          notes: string | null
+          proficiency_level: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          id?: string
+          name: string
+          notes?: string | null
+          proficiency_level?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          proficiency_level?: number
+          updated_at?: string
           user_id?: string
         }
         Relationships: []
