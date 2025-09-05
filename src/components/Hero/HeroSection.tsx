@@ -37,12 +37,19 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="premium" size="lg" className="text-lg">
-                Start Free Analysis
-                <ArrowRight className="h-5 w-5" />
+              <Button variant="premium" size="lg" className="text-lg" asChild>
+                <a href="/auth">
+                  Start Free Analysis
+                  <ArrowRight className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg">
-                Watch Demo
+              <Button variant="outline" size="lg" className="text-lg" asChild>
+                <a href="#demo" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#dashboard-preview')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
+                  Watch Demo
+                </a>
               </Button>
             </div>
             
