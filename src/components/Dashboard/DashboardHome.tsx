@@ -1,13 +1,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, Briefcase, Users, BookOpen, Heart, TrendingUp, Plus } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useCoverLetters } from '@/hooks/useCoverLetters';
+import { useJobApplications } from '@/hooks/useJobApplications';
+import { useAuth } from '@/hooks/useAuth';
 
 const DashboardHome = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const { coverLetters } = useCoverLetters();
+  const { jobApplications } = useJobApplications();
+  
   const stats = [
-    { title: 'Cover Letters', value: '3', icon: FileText, color: 'text-blue-600' },
-    { title: 'Applications', value: '12', icon: Briefcase, color: 'text-green-600' },
-    { title: 'Contacts', value: '8', icon: Users, color: 'text-purple-600' },
-    { title: 'Skills Tracked', value: '15', icon: BookOpen, color: 'text-orange-600' },
+    { title: 'Cover Letters', value: coverLetters?.length.toString() || '0', icon: FileText, color: 'text-blue-600' },
+    { title: 'Applications', value: jobApplications?.length.toString() || '0', icon: Briefcase, color: 'text-green-600' },
+    { title: 'Contacts', value: '0', icon: Users, color: 'text-purple-600' },
+    { title: 'Skills Tracked', value: '0', icon: BookOpen, color: 'text-orange-600' },
   ];
 
   const quickActions = [
@@ -22,7 +31,7 @@ const DashboardHome = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground">Welcome to your career assistant</p>
+          <p className="text-muted-foreground">Welcome back, {user?.email?.split('@')[0] || 'User'}!</p>
         </div>
         <div className="flex space-x-2">
           <Button>
@@ -54,7 +63,7 @@ const DashboardHome = () => {
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {quickActions.map((action) => (
-            <Card key={action.title} className="hover:shadow-md transition-shadow cursor-pointer">
+            <Card key={action.title} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => navigate(action.href)}>
               <CardHeader>
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-primary/10 rounded-lg">
@@ -65,7 +74,7 @@ const DashboardHome = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription>{action.description}</CardDescription>
-                <Button variant="outline" size="sm" className="mt-3 w-full">
+                <Button variant="outline" size="sm" className="mt-3 w-full" onClick={(e) => { e.stopPropagation(); navigate(action.href); }}>
                   Get Started
                 </Button>
               </CardContent>
@@ -84,21 +93,21 @@ const DashboardHome = () => {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-muted-foreground">Applied to Software Engineer at TechCorp</span>
-              <span className="text-xs text-muted-foreground ml-auto">2 hours ago</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-muted-foreground">Created cover letter for Product Manager role</span>
-              <span className="text-xs text-muted-foreground ml-auto">1 day ago</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm">
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span className="text-muted-foreground">Added new contact: Sarah Chen (LinkedIn)</span>
-              <span className="text-xs text-muted-foreground ml-auto">3 days ago</span>
-            </div>
+            {jobApplications && jobApplications.length > 0 ? (
+              jobApplications.slice(0, 3).map((application, index) => (
+                <div key={application.id} className="flex items-center space-x-3 text-sm">
+                  <div className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-green-500' : index === 1 ? 'bg-blue-500' : 'bg-purple-500'}`}></div>
+                  <span className="text-muted-foreground">Applied to {application.position_title} at {application.company_name}</span>
+                  <span className="text-xs text-muted-foreground ml-auto">
+                    {new Date(application.created_at).toLocaleDateString()}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <div className="text-center text-muted-foreground py-4">
+                No recent activity. Start by creating a cover letter or tracking a job application!
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
