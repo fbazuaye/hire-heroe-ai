@@ -172,6 +172,48 @@ export type Database = {
         }
         Relationships: []
       }
+      cover_letters: {
+        Row: {
+          company_name: string
+          content: string
+          created_at: string
+          id: string
+          job_description: string | null
+          position_title: string
+          status: string | null
+          title: string
+          tone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_name: string
+          content: string
+          created_at?: string
+          id?: string
+          job_description?: string | null
+          position_title: string
+          status?: string | null
+          title: string
+          tone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_name?: string
+          content?: string
+          created_at?: string
+          id?: string
+          job_description?: string | null
+          position_title?: string
+          status?: string | null
+          title?: string
+          tone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           embedding: string | null
@@ -314,6 +356,135 @@ export type Database = {
           refresh_token_encrypted?: string | null
           scope?: string | null
           token_type?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      job_applications: {
+        Row: {
+          application_date: string | null
+          company_name: string
+          created_at: string
+          id: string
+          job_url: string | null
+          location: string | null
+          notes: string | null
+          position_title: string
+          salary_range: string | null
+          status: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          application_date?: string | null
+          company_name: string
+          created_at?: string
+          id?: string
+          job_url?: string | null
+          location?: string | null
+          notes?: string | null
+          position_title: string
+          salary_range?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          application_date?: string | null
+          company_name?: string
+          created_at?: string
+          id?: string
+          job_url?: string | null
+          location?: string | null
+          notes?: string | null
+          position_title?: string
+          salary_range?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      motivational_content: {
+        Row: {
+          category: string | null
+          content: string
+          content_type: string
+          created_at: string
+          id: string
+          is_favorite: boolean | null
+          title: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: string | null
+          content: string
+          content_type: string
+          created_at?: string
+          id?: string
+          is_favorite?: boolean | null
+          title?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: string | null
+          content?: string
+          content_type?: string
+          created_at?: string
+          id?: string
+          is_favorite?: boolean | null
+          title?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      networking_contacts: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string | null
+          id: string
+          last_contact_date: string | null
+          linkedin_url: string | null
+          name: string
+          notes: string | null
+          relationship_type: string | null
+          tags: string[] | null
+          title: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          last_contact_date?: string | null
+          linkedin_url?: string | null
+          name: string
+          notes?: string | null
+          relationship_type?: string | null
+          tags?: string[] | null
+          title?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          last_contact_date?: string | null
+          linkedin_url?: string | null
+          name?: string
+          notes?: string | null
+          relationship_type?: string | null
+          tags?: string[] | null
+          title?: string | null
           updated_at?: string
           user_id?: string
         }
@@ -641,6 +812,42 @@ export type Database = {
           created_at?: string
           id?: string
           query?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      skills_assessments: {
+        Row: {
+          assessment_type: string | null
+          certification_url: string | null
+          created_at: string
+          id: string
+          notes: string | null
+          proficiency_level: number | null
+          skill_name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          assessment_type?: string | null
+          certification_url?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          proficiency_level?: number | null
+          skill_name: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          assessment_type?: string | null
+          certification_url?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          proficiency_level?: number | null
+          skill_name?: string
+          updated_at?: string
           user_id?: string
         }
         Relationships: []
