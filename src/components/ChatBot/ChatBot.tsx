@@ -37,21 +37,21 @@ const ChatBot = () => {
                   iconColor: 'white',
                   customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
                   autoWindowOpen: {
-                      autoOpen: false,
+                      autoOpen: true,
                       openDelay: 2,
                       autoOpenOnMobile: false
                   }
               },
               tooltip: {
                   showTooltip: true,
-                  tooltipMessage: 'CareerAi Chatagent',
+                  tooltipMessage: 'Hi There 👋!',
                   tooltipBackgroundColor: 'black',
                   tooltipTextColor: 'white',
                   tooltipFontSize: 16
               },
               disclaimer: {
                   title: 'Disclaimer',
-                  message: "By using this chatbot, you agree to the <a target=\\"_blank\\" href=\\"CareerAi\\">Terms & Condition</a>",
+                  message: "By using this chatbot, you agree to the <a target=\\"_blank\\" href=\\"https://flowiseai.com/terms\\">Terms & Condition</a>",
                   textColor: 'black',
                   buttonColor: '#3b82f6',
                   buttonText: 'Start Chatting',
@@ -63,18 +63,18 @@ const ChatBot = () => {
               chatWindow: {
                   showTitle: true,
                   showAgentMessages: true,
-                  title: 'CareerAi',
+                  title: 'Flowise Bot',
                   titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                  welcomeMessage: 'Hi there! I\\'m CareerAI, your personal job search assistant.\\nI\\'m here to make your career journey smoother \\nJust ask me anything about your job search, and I\\'ll give you tailored guidance, tools, and resources to boost your chances of success. \\n',
+                  welcomeMessage: 'Hello! This is custom welcome message',
                   errorMessage: 'This is a custom error message',
                   backgroundColor: '#ffffff',
                   backgroundImage: 'enter image path or link',
-                  height: 490,
+                  height: 700,
                   width: 400,
                   fontSize: 16,
                   starterPrompts: [
-                      "How can I improve my LinkedIn profile?",
-                      "What certifications can boost my employability"
+                      "What is a bot?",
+                      "Who are you?"
                   ],
                   starterPromptFontSize: 15,
                   clearChatOnReload: false,
@@ -97,8 +97,8 @@ const ChatBot = () => {
                       backgroundColor: '#ffffff',
                       textColor: '#303235',
                       sendButtonColor: '#3B81F6',
-                      maxChars: 300,
-                      maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 300 characters.',
+                      maxChars: 50,
+                      maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
                       autoFocus: true,
                       sendMessageSound: true,
                       sendSoundLocation: 'send_message.mp3',
@@ -115,8 +115,8 @@ const ChatBot = () => {
                   footer: {
                       textColor: '#303235',
                       text: 'Powered by',
-                      company: 'LiveGig Ltd',
-                      companyLink: 'https://hireheroe.netlify.app/'
+                      company: 'Flowise',
+                      companyLink: 'https://flowiseai.com'
                   }
               }
           }
