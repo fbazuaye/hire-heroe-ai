@@ -44,7 +44,7 @@ const ChatBot = () => {
               },
               tooltip: {
                   showTooltip: true,
-                  tooltipMessage: 'Hi There 👋!',
+                  tooltipMessage: 'CareerAi Chatagent',
                   tooltipBackgroundColor: 'black',
                   tooltipTextColor: 'white',
                   tooltipFontSize: 16
@@ -65,7 +65,7 @@ const ChatBot = () => {
                   showAgentMessages: true,
                   title: 'CareerAi',
                   titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                  welcomeMessage: 'Hello! This is custom welcome message',
+                  welcomeMessage: 'Hi there! I\\'m CareerAI, your personal job search assistant.\\nI\\'m here to make your career journey smoother \\nJust ask me anything about your job search, and I\\'ll give you tailored guidance, tools, and resources to boost your chances of success. \\n',
                   errorMessage: 'This is a custom error message',
                   backgroundColor: '#ffffff',
                   backgroundImage: 'enter image path or link',
