@@ -20,7 +20,7 @@ const ChatBot = () => {
       import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
       Chatbot.init({
           chatflowid: "81474cb0-b321-4dfe-abd3-0487f4de430b",
-          apiHost: "https://ulqnimmhknylzhbxvibw.supabase.co/functions/v1",
+          apiHost: "https://ulqnimmhknylzhbxvibw.supabase.co/functions/v1/flowise-proxy",
           chatflowConfig: {
               /* Chatflow Config */
           },
