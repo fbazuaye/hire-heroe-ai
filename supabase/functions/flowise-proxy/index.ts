@@ -12,9 +12,11 @@ serve(async (req) => {
   }
 
   try {
-    const { question, chatId, overrideConfig } = await req.json();
+    const requestBody = await req.json();
+    const { question, chatId, overrideConfig } = requestBody;
     
-    console.log('Proxying request to Flowise:', { question, chatId });
+    console.log('Received request body:', requestBody);
+    console.log('Proxying request to Flowise:', { question, chatId, overrideConfig });
 
     // Use the specific Flowise endpoint provided
     const flowiseUrl = 'https://srv938896.hstgr.cloud/api/v1/prediction/81474cb0-b321-4dfe-abd3-0487f4de430b';
