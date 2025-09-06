@@ -20,7 +20,7 @@ const ChatBot = () => {
       import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
       Chatbot.init({
           chatflowid: "81474cb0-b321-4dfe-abd3-0487f4de430b",
-          apiHost: "https://srv938896.hstgr.cloud",
+          apiHost: "https://ulqnimmhknylzhbxvibw.supabase.co/functions/v1/flowise-proxy",
           chatflowConfig: {
               /* Chatflow Config */
           },
@@ -35,7 +35,7 @@ const ChatBot = () => {
                 size: 48,
                 dragAndDrop: true,
                 iconColor: 'white',
-                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                customIconSrc: 'https://livegig.com.ng/wp-content/uploads/2025/09/Logo.png',
                 autoWindowOpen: {
                     autoOpen: false,
                     openDelay: 2,
@@ -64,8 +64,8 @@ const ChatBot = () => {
                 showTitle: true,
                 showAgentMessages: true,
                 title: 'CareerAi',
-                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                welcomeMessage: 'Hi there! I\\'m CareerAI, your personal job search assistant.\\nI\\'m here to make your career journey smoother \\nJust ask me anything about your job search, and I\\'ll give you tailored guidance, tools, and resources to boost your chances of success. \\n',
+                titleAvatarSrc: 'https://livegig.com.ng/wp-content/uploads/2025/09/Logo.png',
+                welcomeMessage: 'Hi there! I\\'m CareerAI, your personal job search assistant.\\nI\\'m here to make your career journey smoother\\nJust ask me anything about your job search, and I\\'ll give you tailored guidance, tools, and resources to boost your chances of success.',
                 errorMessage: 'This is a custom error message',
                 backgroundColor: '#ffffff',
                 backgroundImage: 'enter image path or link',
